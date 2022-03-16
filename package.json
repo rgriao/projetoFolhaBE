@@ -1,0 +1,25 @@
+{
+  "name": "estudando-express",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./server.js",
+    "nodemon": "nodemon server.js"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.1",
+    "cookie-parser": "~1.4.4",
+    "cors": "^2.8.5",
+    "debug": "~2.6.9",
+    "express": "^4.16.4",
+    "express-fileupload": "^1.3.1",
+    "http-errors": "~1.6.3",
+    "jade": "~1.11.0",
+    "morgan": "~1.9.1",
+    "nodemon": "^2.0.15",
+    "pg": "^8.7.3",
+    "pg-hstore": "^2.3.4",
+    "react": "^17.0.2",
+    "sequelize": "^6.15.1"
+  }
+}
