@@ -36,7 +36,7 @@ exports.AjustaSegmentos = (corpo) => new Promise
             espaco5,espaco1+espaco1,espaco1+espaco1+espaco1,espaco1,espaco10+"\n",           
             folha.codigodobanco,"0001","3",CompletaCampos("inicio",(2+y).toString(),5,"0"),
             "B",espaco1+espaco1+espaco1,
-            "2",CompletaCampos("inicio",folha.cpfdofuncionario,14,"0"),CompletaCampos("fim",folha.enderecofuncionario,35," "),
+            "1",CompletaCampos("inicio",folha.cpfdofuncionario,14,"0"),CompletaCampos("fim",folha.enderecofuncionario,35," "),
             CompletaCampos("inicio",folha.ndolocalfuncionario,5,"0"),CompletaCampos("fim",folha.complementofuncionario,15," "),
             CompletaCampos("fim",folha.bairrofuncionario,15," "),CompletaCampos("fim",folha.cidadefuncionario,15," "),
             CompletaCampos("inicio",folha.cepfuncionario,5,"0"),CompletaCampos("fim",folha.complementodocepfuncionario,3," "),

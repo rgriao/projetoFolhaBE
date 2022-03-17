@@ -13,12 +13,14 @@ var digito1 = "0";
 var digito3 = "000";   
 
 var textoHeaderArquivo = [];
-  
+//mudar o cód cnpj para "2" e criar um textoHeaderArquivo e Lote para o BB
+//pois o nº do convênio se desdobra em 4 partes de BB1 a BB4 
+//(ver outras peculiaridades do BB)
     DadosFolha.findOne({ where: { cnpj: cnpj } })
         .then(folha => {
             //com base no cnpj pesquisa os dados //folha.codigodobanco
             textoHeaderArquivo = [folha.codigodobanco,digito1+digito3,digito1,espaco9,
-            "2",CompletaCampos("inicio",folha.cnpj,14,"0"),CompletaCampos("inicio",folha.codigoconvenio,20,"0"),
+            "1",CompletaCampos("inicio",folha.cnpj,14,"0"),CompletaCampos("inicio",folha.codigoconvenio,20,"0"),
             CompletaCampos("inicio",folha.agenciaempresa,5,"0"),folha.digitodaagenciaempresa,
             CompletaCampos("inicio",folha.ndacontaempresa,12,"0"),folha.digitodacontaempresa,
             CompletaCampos("fim",folha.digitoverificadoragcontaempresa,1," "),CompletaCampos("fim",folha.nomedaempresa,30," "),
