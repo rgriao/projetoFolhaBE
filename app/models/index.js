@@ -1,7 +1,17 @@
 const dbConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 //conecta ao banco de dados
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD,
+
+const sequelize = new Sequelize(`${process.env.DB_DATABASE}`, `${process.env.DB_USER}`, `${process.env.DB_PASSWORD}`, 
+{
+  host: process.env.DB_HOST,
+  dialect: 'postgres'
+});
+/*const sequelize = new Sequelize("DATABASE", "DB_USER", "PASSWORD",
+
+const sequelize = new Sequelize("postgres://postgres:postgres@localhost/desi6576mj2kdf", {
+//    dialect: 'postgres'
+//});  
   {    
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
@@ -11,7 +21,7 @@ const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD,
   }
 });
 
-/*sequelize.beforeConnect(async (currConfig) => {
+sequelize.beforeConnect(async (currConfig) => {
   try {
       await sequelize.authenticate();
       console.log('A conexão foi estabelecida com sucesso!');

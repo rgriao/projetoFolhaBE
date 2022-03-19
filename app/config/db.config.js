@@ -14,9 +14,10 @@ https://blog.rocketseat.com.br/nodejs-express-sequelize/*/
 
 module.exports = {
     HOST: process.env.DATABASE_URL,
-    USER: process.env.USER,
-    PASSWORD: process.env.PASSWORD,
-    DATABASE: process.env.DATABASE,
+    //USER: process.env.DB_USER,
+    DB_USER: process.env.DB_USER,
+    DB_PASSWORD: process.env.DB_PASSWORD,
+    DB_DATABASE: process.env.DB_DATABASE,
     dialect: "postgres",
     pool: {
       max: 5,

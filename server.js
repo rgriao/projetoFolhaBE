@@ -3,7 +3,7 @@ var debug = require('debug')('analisando: cnab240');
 var http = require('http');
 const cors = require("cors");
 require('dotenv').config();
-
+//console.log("🔥🔥🔥", process.env);
 app.use(cors());
 app.options('*', cors());
 var corsOptions = {
