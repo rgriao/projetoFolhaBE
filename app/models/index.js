@@ -2,9 +2,9 @@ const dbConfig = require("../config/db.config.js");
 const Sequelize = require("sequelize");
 //conecta ao banco de dados
 
-const sequelize = new Sequelize(`${process.env.DB_DATABASE}`, `${process.env.DB_USER}`, `${process.env.DB_PASSWORD}`, 
+const sequelize = new Sequelize(`${process.env.DATABASE}`, `${process.env.DB_USER}`, `${process.env.PASSWORD}`, 
 {
-  host: process.env.DB_HOST,
+  host: process.env.HOST,
   dialect: 'postgres'
 });
 /*const sequelize = new Sequelize("DATABASE", "DB_USER", "PASSWORD",
