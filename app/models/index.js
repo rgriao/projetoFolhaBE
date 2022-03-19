@@ -19,7 +19,7 @@ sequelize = new Sequelize(process.env.DATABASE_URL, {
     console.error('Unable to connect to the database:', err);
   });*/
 
-  //cria a tabela real conforme modelo
+//Cria a tabela real conforme modelo
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
