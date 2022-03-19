@@ -5,7 +5,7 @@ var logger = require('morgan');
 var cors = require ("cors");
 const bodyParser = require("body-parser");
 var fileupload = require("express-fileupload");
-
+require('dotenv').config()
 //cria o aplicativo express
 var app = express();
 app.use(fileupload());
