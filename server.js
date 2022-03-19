@@ -70,5 +70,5 @@ server.on('audição', onListening);
 //neste momento não se fala de rotas.
 //require("./routes/tutorial.routes");//(app);
 server.listen(port, () => {
-  console.log(`O Servidor está pronto para as comunicações na porta: ${ port}.`);
+  console.log(`O Servidor está pronto para se comunicar na porta: ${ port}.`);
 });
