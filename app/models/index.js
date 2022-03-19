@@ -17,3 +17,11 @@ sequelize
   .catch(err => {
     console.error('Unable to connect to the database:', err);
   });
+
+  //cria a tabela real conforme modelo
+const db = {};
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+db.dadosfolhas = require("./CamposFolha.js")(sequelize, Sequelize);
+
+module.exports = db;
