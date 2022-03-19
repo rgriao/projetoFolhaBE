@@ -1,8 +1,8 @@
 const dbConfig = require("../configurações/db.config.js");
 const Sequelize = require("sequelize");
 //conecta ao banco de dados
-const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, 
-  dbConfig.PASSWORD, {    
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD,
+  {    
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
   operatorsAliases: false,
