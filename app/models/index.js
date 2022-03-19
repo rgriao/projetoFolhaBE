@@ -9,14 +9,15 @@ sequelize = new Sequelize(process.env.DATABASE_URL, {
   }
 );
 
-sequelize
+//visa apenas veriicar se houve a conexão com sucesso
+/*sequelize
   .authenticate()
   .then(() => {
     console.log('Connection has been established successfully.');
   })
   .catch(err => {
     console.error('Unable to connect to the database:', err);
-  });
+  });*/
 
   //cria a tabela real conforme modelo
 const db = {};
