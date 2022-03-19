@@ -13,10 +13,10 @@ configurações/db.config.js e colocamos o código abaixo:
 https://blog.rocketseat.com.br/nodejs-express-sequelize/*/
 
 module.exports = {
-    HOST: "postgres://frrzfkbshgxnzm:607ccff1c0386e1409b6497f8516b75bdcce48d67f05aea75aa674dc2777e211@ec2-54-198-73-79.compute-1.amazonaws.com:5432/desi6576mj2kdf",
-    USER: "postgres",
-    PASSWORD: "ur13ricar",
-    DB: "CNAB240",
+    HOST: process.env.DATABASE_URL,
+    USER: process.env.USER,
+    PASSWORD: process.env.PASSWORD,
+    DATABASE: process.env.DATABASE,
     dialect: "postgres",
     pool: {
       max: 5,
