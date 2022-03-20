@@ -7,8 +7,14 @@ require('dotenv').config();
 app.use(cors());
 app.options('*', cors());
 var corsOptions = {
-  origin: "http://localhost:8081"
+  origin: (process.env.PORT || '8081')
 };
+
+if (process.env.NODE_ENV) { app.use(express.static('FrontEnd/build')); 
+const path = require('path'); 
+app.get('*', (req, res) => { res.sendFile(path.resolve(__dirname, 'FrontEnd', 'build', 'index.html')); 
+}); 
+}
 //Define uma normalização de uma porta em um número, string ou false. 
 function normalizePort(val) {
   var port = parseInt(val, 10);
