@@ -1,3 +1,3 @@
-//web: npm start
+web:npm start
 //web: npm run heroku
-web:node index.js
+//web:node index.js
