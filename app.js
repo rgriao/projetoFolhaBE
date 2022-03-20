@@ -30,7 +30,7 @@ app.use(cookieParser());
 //com a definição do express.static (função de middleware integrada
 //no Express) podemos carregar na tela o conteúdo dos arquivos
 //estáticos que estão no diretório 'public'. poderia ser 'files'.
-app.use(express.static(path.join(__dirname, 'public')));
+//app.use(express.static(path.join(__dirname, 'public')));
 /*Processo é chamada para qualquer verbo de http, assim vale para 
 todas as rotas (uri) e verbos (get, post, etc.)
 var Processo = require('./app/controllers/processamentos')
