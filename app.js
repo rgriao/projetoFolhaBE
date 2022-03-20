@@ -38,10 +38,11 @@ app.use(Processo);*/
 var CrudFolha = require('./app/controllers/manipularBanco');
 app.use("/", CrudFolha);
 // pegar o erro 404 e encaminhar para o manipulador de erros
-app.use(function(err, res) {
+/*app.use(function(err, res) {
   console.error(err.stack);
   res.status(404).send("Desculpe-me, não consigo encontrar o que foi solicitado. Tente outro caminho!");
-});
+});*/
+//colocar no start do package.json heroku config -s > .env && 
 //ver sucrase o que é no debug
 // manipulador de erros para desenvolvimento
 app.use(function(err, req, res, next) {
