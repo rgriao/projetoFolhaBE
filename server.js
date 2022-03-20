@@ -54,18 +54,15 @@ function onListening() {
   debug('Ouvindo em: ' + bind);
 }
 
- //Obtém uma porta normalizada do ambiente e armazena no 
- //aplicativo Express.
-var port = normalizePort(process.env.PORT || '8080');
-app.set('port', port);
-
 //Cria um servidor HTTP na porta definida e que foi setada no aplicativo. 
 var server = http.createServer(app);
-
 //Aciona ouvintes de eventos para os eventos "erro" e "ouvindo".
 server.on('erro', onError);
 server.on('audição', onListening);
-
+//Obtém uma porta normalizada do ambiente e armazena no 
+ //aplicativo Express.
+ var port = normalizePort(process.env.PORT || '8080');
+ app.set('port', port);
 //Confere se o servidor conectou na porta fornecida visando permitir
 //comunicações entre o usuário (app browser) e o código do aplicativo express
 //neste momento não se fala de rotas.
