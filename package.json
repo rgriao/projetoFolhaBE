@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "heroku config -s > .env && node ./server.js",
+    "start": "node ./server.js",
     "nodemon": "nodemon server.js"
   },
   "dependencies": {
