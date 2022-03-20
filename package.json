@@ -4,8 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node ./server.js",
-    "nodemon": "nodemon server.js",
-    "heroku-postbuild": "cd.. && cd FrontEnd && npm install && npm run build"
+    "nodemon": "nodemon server.js"    
   },
   "dependencies": {
     "body-parser": "^1.19.1",
