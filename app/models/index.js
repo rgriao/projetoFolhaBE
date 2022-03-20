@@ -9,7 +9,7 @@ sequelize = new Sequelize(process.env.DATABASE_URL, {
   }
 );
 
-//visa apenas veriicar se houve a conexão com sucesso
+//visa apenas verificar se houve conexão com sucesso
 /*sequelize
   .authenticate()
   .then(() => {
@@ -19,7 +19,7 @@ sequelize = new Sequelize(process.env.DATABASE_URL, {
     console.error('Unable to connect to the database:', err);
   });*/
 
-//Cria a tabela real conforme modelo
+//Sequelize cria a tabela no PG conforme modelo
 const db = {};
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;

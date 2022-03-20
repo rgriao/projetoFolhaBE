@@ -1,2 +1,2 @@
-//web: npm start
-web: npm run heroku
+web: npm start
+//web: npm run heroku
