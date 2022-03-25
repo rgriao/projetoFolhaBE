@@ -61,12 +61,12 @@ server.on('erro', onError);
 server.on('audição', onListening);
 //Obtém uma porta normalizada do ambiente e armazena no 
  //aplicativo Express.
- var port = normalizePort(process.env.PORT || '8080');
- app.set('port', port);
+ const PORT = normalizePort(process.env.PORT || '8080');
+ app.set('port', PORT);
 //Confere se o servidor conectou na porta fornecida visando permitir
 //comunicações entre o usuário (app browser) e o código do aplicativo express
 //neste momento não se fala de rotas.
 //require("./routes/tutorial.routes");//(app);
-server.listen(port, () => {
-  console.log(`O Servidor está pronto para se comunicar na porta: ${ port}.`);
+server.listen(PORT, () => {
+  console.log(`O Servidor está pronto para se comunicar na porta: ${PORT}.`);
 });
