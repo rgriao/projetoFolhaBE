@@ -52,8 +52,8 @@ exports.BuscaQdeRegistros = (corpo) => {
 
 exports.SomaPagamentos = (corpo) => new Promise 
 ((aResolver, aRejeitar) => {
-
-  const x = new Promise(resolve => (y+0));
+  var y=1;
+  const x = new Promise(resolve => (y+1));
   var ValordoPag = 0.00;
   var QdeRegistros = Object.keys(corpo).length;
   //console.log("\n\n"+"***********Entrou no SomaPagamentos*************"+ QdeRegistros);

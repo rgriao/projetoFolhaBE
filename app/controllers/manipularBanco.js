@@ -35,7 +35,7 @@ router.post('/add', async function (req, res) {
                       TxtFinal.push(tarqresolveu); 
                        }).then(() => {                    
                             DeletaRegistros(req.body[0].cnpj).then(() => {     
-                            //console.log("***********Entrou no DeletaRegistros do manipulador:*************")           
+                            //console.log("🔥🔥🔥 Entrou no DeletaRegistros do manipulador: 🔥🔥🔥")           
                             res.send(TxtFinal);
                                     // dar um refresh na página do html após clicar
                             });
