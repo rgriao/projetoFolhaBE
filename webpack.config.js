@@ -5,7 +5,7 @@ module.exports = {
     entry: './server.js',
     output: {
         filename: 'bundleCNAB240BE.js',
-        path: path.resolve(__dirname + '/dist')
+        path: path.resolve(__dirname + '/public')
 
     },
     module: {
