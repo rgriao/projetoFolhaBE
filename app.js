@@ -26,7 +26,6 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
-
 //com a definição do express.static (função de middleware integrada
 //no Express) podemos carregar na tela o conteúdo dos arquivos
 //estáticos que estão no diretório 'public'. poderia ser 'files'.
@@ -38,10 +37,10 @@ app.use(Processo);*/
 var CrudFolha = require('./app/controllers/manipularBanco');
 app.use("/", CrudFolha);
 // pegar o erro 404 e encaminhar para o manipulador de erros
-/*app.use(function(err, res) {
+app.use(function(err, res) {
   console.error(err.stack);
   res.status(404).send("Desculpe-me, não consigo encontrar o que foi solicitado. Tente outro caminho!");
-});*/
+});
 //colocar no start do package.json heroku config -s > .env && 
 //ver sucrase o que é no debug
 // manipulador de erros para desenvolvimento
