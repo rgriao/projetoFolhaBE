@@ -52,7 +52,7 @@ router.post('/add', async function (req, res) {
   });    
   });
   });
-  router.get('/', async function (req, res) {
+ /* router.get('/', async function (req, res) {
     DadosFolha.findAll()
       .then(response => {
         console.log(response.data);
@@ -60,5 +60,5 @@ router.post('/add', async function (req, res) {
       .catch(e => {
         console.log(e);
       });
-  });
+  });*/
   module.exports = router;
