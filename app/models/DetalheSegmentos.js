@@ -43,7 +43,7 @@ exports.AjustaSegmentos = (corpo) => new Promise
             folha.sigladoestadofuncionario,espaco20+espaco20+espaco20+espaco20+espaco10+
             espaco8+espaco1,digito6,digito8+"\n"            
             ]
-            y = y + 1;//era y + 2
+            y = y + 2;
              })
              .then(() => {                      
                 TxtSegmentos.push(textoSegmentos);//TxtSegmentos
