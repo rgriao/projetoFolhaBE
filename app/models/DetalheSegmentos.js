@@ -15,7 +15,7 @@ exports.AjustaSegmentos = (corpo) => new Promise
     var digito8 = "00000000";
     var digito15 = "000000000000000";      
     var TxtSegmentos = [];
-    var textoSegmentoA = [];    
+    var textoSegmentos = [];    
     //var textoSegmentoB = [];
 
     var qdeRegistro = Object.keys(corpo).length;
@@ -26,7 +26,7 @@ exports.AjustaSegmentos = (corpo) => new Promise
     for (let i = 0, p = Promise.resolve(); i < qdeRegistro; i++) {            
             p = p.then(() => DadosFolha.findOne({where: {nomedofuncionario: corpo[i].nomedofuncionario}})) 
             .then((folha) => {   
-            textoSegmentoA = [folha.codigodobanco,"0001","3",CompletaCampos("inicio",(1+y).toString(),5,"0"),"A",digito1,digito1+digito1,
+            textoSegmentos = [folha.codigodobanco,"0001","3",CompletaCampos("inicio",(1+y).toString(),5,"0"),"A",digito1,digito1+digito1,
             digito1+digito1+digito1,folha.codigodobanco,CompletaCampos("inicio",folha.agenciafuncionario,5,"0"),
             folha.digitodaagenciafuncionario,CompletaCampos("inicio",folha.ndacontafuncionario,12,"0"),
             folha.digitodacontafuncionario,CompletaCampos("fim",folha.digitoverificadoragcontafuncionario,1," "),
@@ -43,10 +43,10 @@ exports.AjustaSegmentos = (corpo) => new Promise
             folha.sigladoestadofuncionario,espaco20+espaco20+espaco20+espaco20+espaco10+
             espaco8+espaco1,digito6,digito8+"\n"            
             ]
-            y = y + 2;
+            y = y + 1;//era y + 2
              })
              .then(() => {                      
-                TxtSegmentos.push(textoSegmentoA);//TxtSegmentos
+                TxtSegmentos.push(textoSegmentos);//TxtSegmentos
                 //console.log("***********Entrou no PUSH:*************" + TxtSegmentos);
             })
             .then(() => { 
