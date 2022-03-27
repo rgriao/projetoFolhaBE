@@ -19,8 +19,8 @@ exports.AjustaSegmentos = (corpo) => new Promise
     //var textoSegmentoB = [];
 
     var qdeRegistro = Object.keys(corpo).length;
-    var y = 1;
-    const x = new Promise(resolve => (y+1));    
+    var y = 0;
+    const x = new Promise(resolve => (1+y));    
     //console.log("\n\n" + "***********Entrou no segmentoA:*************" + qdeRegistro+"\n\n");
     
     for (let i = 0, p = Promise.resolve(); i < qdeRegistro; i++) {            
