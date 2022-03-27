@@ -4,7 +4,7 @@ module.exports = {
     mode: "production",
     entry: './server.js',
     output: {
-        filename: 'bundleCNAB240BE.js',
+        filename: 'bundle.js',
         path: path.resolve(__dirname + '/public')
 
     },
