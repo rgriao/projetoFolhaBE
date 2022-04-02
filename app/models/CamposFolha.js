@@ -125,6 +125,7 @@ module.exports = (sequelize, Sequelize) => {
       alter : true,
       force: false,
     });
+    //https://wharley.github.io/sequelize-com-database-existente-postgres/
     //console.log ("******************************************Entrou no sequelize e os dados são:" + DadosFolha);
     return (DadosFolha); 
         
