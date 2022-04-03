@@ -8,8 +8,7 @@ app.use(cors());
 app.options('*', cors());
 var corsOptions = {
   origin: (process.env.PORT || '8081')
-};
- 
+}; 
 function normalizePort(val) {
   var port = parseInt(val, 10);
   if (isNaN(port)) {    
@@ -43,9 +42,9 @@ function onError(error) {
 function onListening() {
   var addr = server.address();
   var bind = typeof addr === 'string'
-    ? 'pipe ' + addr
-    : 'port ' + addr.port;
-  debug('Ouvindo em: ' + bind);
+  ? 'pipe ' + addr
+  : 'port ' + addr.port;
+  console.log('Ouvindo em: ' + bind);
 }
 
 var server = http.createServer(app);
@@ -56,5 +55,5 @@ server.on('audição', onListening);
 const PORT = normalizePort(process.env.PORT || '8080');
 app.set('port', PORT);
 server.listen(PORT, () => {
-  console.log(`O Servidor está pronto para se comunicar na porta: ${PORT}.`);
+console.log(`O Servidor está pronto para se comunicar na porta: ${PORT}.`);
 });
