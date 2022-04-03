@@ -1,4 +1,7 @@
 const Sequelize = require('sequelize');
+const dbConfig = require("../config/db.config");
+
+if (process.env.NODE_ENV === "production") {
 sequelize = new Sequelize(process.env.DATABASE_URL, {
     dialectOptions: {
       ssl: {
@@ -8,7 +11,18 @@ sequelize = new Sequelize(process.env.DATABASE_URL, {
     }
   }
 );
-
+}
+if (process.env.NODE_ENV === "development" || process.env.NODE_ENV === "text") {
+const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, 
+  dbConfig.PASSWORD, {    
+  host: dbConfig.HOST,
+  dialect: dbConfig.dialect,
+  operatorsAliases: false,
+  define: {
+    timestamps: false
+  }
+});
+}
 //visa apenas verificar se houve conexão com sucesso
 /*sequelize
   .authenticate()

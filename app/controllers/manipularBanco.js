@@ -13,10 +13,9 @@ const { DeletaRegistros } = require("./processamentos");
 router.post('/add', async function (req, res) {
 
   var TxtFinal = [];      
-   //console.log("***********Entrou no POST-ADD:*************")
-   
-   await DeletaRegistros(req.body[0].cnpj).then(() => {   
-    DadosFolha.bulkCreate(req.body)         
+   console.log("***********Entrou no POST-ADD:*************" + req.body[0].cnpj)   
+  //*******await DeletaRegistros(req.body[0].cnpj).then(() => {   
+   DadosFolha.bulkCreate(req.body)         
     .then(() => {   
      AjustaHeaderArquivo(req.body[0].cnpj).then((aharesolveu) => { 
       TxtFinal.push(aharesolveu); 
@@ -32,23 +31,22 @@ router.post('/add', async function (req, res) {
                     }).then(() => {
                       AjustaTrailerArquivo(req.body).then((tarqresolveu) => {
                       TxtFinal.push(tarqresolveu); 
-                       }).then(() => {                    
-                            DeletaRegistros(req.body[0].cnpj).then(() => {     
-                            //console.log("🔥🔥🔥 Entrou no DeletaRegistros do manipulador: 🔥🔥🔥")           
-                            res.send(TxtFinal);
-                                    // dar um refresh na página do html após clicar
-                            });
-                        });
+                      }).then(() => {                    
+                      //********DeletaRegistros(req.body[0].cnpj).then(() => {     
+                      //console.log("🔥🔥🔥 Entrou no DeletaRegistros do manipulador: 🔥🔥🔥")           
+                      res.send(TxtFinal);                            
+                      });
                     });
                   });
+              });
             });
         });
-      });
-  })
+    });
+ /* })
   .catch(err => {
   res.status(500).send({          
   message: "Ocorreu algum erro ao alimentar a tabela dadosfolha!" + err
   });    
   });
-  }); 
+  }); */
   module.exports = router;

@@ -10,7 +10,7 @@ mudanças para a equipe.*/
 module.exports = (sequelize, Sequelize) => {  
     const DadosFolha = sequelize.define("dadosfolha", {
     idfolhapagamento: {   	
-    type: Sequelize.INTEGER.UNSIGNED,
+    type: Sequelize.INTEGER,
     primaryKey: true,
     autoIncrement: true,
     allowNull: false,
