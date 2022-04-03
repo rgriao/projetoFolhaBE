@@ -11,8 +11,7 @@ const { AjustaTrailerLote } = require("../models/TrailerLote");
 const { DeletaRegistros } = require("./processamentos");
 
 router.post('/add', async function (req, res) {
-//"express": "^4.16.1"
-//await DadosFolha.bulkCreate(req.body)
+
   var TxtFinal = [];      
    //console.log("***********Entrou no POST-ADD:*************")
    
@@ -51,14 +50,5 @@ router.post('/add', async function (req, res) {
   message: "Ocorreu algum erro ao alimentar a tabela dadosfolha!" + err
   });    
   });
-  });
- /* router.get('/', async function (req, res) {
-    DadosFolha.findAll()
-      .then(response => {
-        console.log(response.data);
-        })
-      .catch(e => {
-        console.log(e);
-      });
-  });*/
+  }); 
   module.exports = router;
