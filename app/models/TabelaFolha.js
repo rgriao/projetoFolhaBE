@@ -1,14 +1,7 @@
-/*Sequelize permite criar, buscar, alterar e remover dados do
-banco de dados utilizando métodos JS, além de permitir a
-modificação da estrutura das tabelas com sync(alter : true). Os models da aplicação
-são a representação das tabelas do banco de dados em forma
-de classe, pois assim podemos manipulá-las mais
-facilmente através do código, ao alterar a estrutura das tabelas
-devemos atualizar o migrations para refletir as 
-mudanças para a equipe.*/
+const Sequelize = require("sequelize");
+const { conexao } = require("../config/connection");
 
-module.exports = (sequelize, Sequelize) => {  
-    const DadosFolha = sequelize.define("dadosfolha", {
+  const TabelaFolha = conexao().define("tabelafolha", {
     idfolhapagamento: {   	
     type: Sequelize.INTEGER,
     primaryKey: true,
@@ -120,13 +113,9 @@ module.exports = (sequelize, Sequelize) => {
     valordopagamento: {  
     type: Sequelize.STRING(15) 
     },    
-    });     
-    DadosFolha.sync({ 
+    })
+    TabelaFolha.sync({ 
       alter : true,
-      force: false,
+      force: false,      
     });
-    //https://wharley.github.io/sequelize-com-database-existente-postgres/
-    //console.log ("******************************************Entrou no sequelize e os dados são:" + DadosFolha);
-    return (DadosFolha); 
-        
-  };
+    module.exports = TabelaFolha;

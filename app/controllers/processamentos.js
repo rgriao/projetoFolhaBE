@@ -1,9 +1,10 @@
-const db = require("../models/index");
-const DadosFolha = db.dadosfolhas;
+const TabelaFolha = require("../models/TabelaFolha");
+
 
 exports.DeletaRegistros = (requisicao) => new Promise 
 ((aResolver, aRejeitar) => {  
-        DadosFolha.destroy({where: {cnpj: requisicao}})        
+
+  TabelaFolha.destroy({where: {cnpj: requisicao}})        
         .then(() => {
         exports.del = true;
         aResolver(exports.del);
@@ -11,7 +12,8 @@ exports.DeletaRegistros = (requisicao) => new Promise
         .catch(err => {
         aRejeitar("Ocorreu um errro ao tentar deletar os registros do usuário!" + err);
         });
-});
+  });
+
 exports.GeraData = () => {
 var today = new Date();
 var dd = String(today.getDate()).padStart(2, '0');
@@ -59,7 +61,7 @@ exports.SomaPagamentos = (corpo) => new Promise
   //console.log("\n\n"+"***********Entrou no SomaPagamentos*************"+ QdeRegistros);
 
     for (let i = 0, p = Promise.resolve(); i < QdeRegistros; i++) {            
-            p = p.then(() => DadosFolha.findOne({where: {nomedofuncionario: corpo[i].nomedofuncionario}})) 
+            p = p.then(() => TabelaFolha.findOne({where: {nomedofuncionario: corpo[i].nomedofuncionario}})) 
             .then((folha) => {              
                 ValordoPag = (parseFloat(ValordoPag) + parseFloat(folha.valordopagamento));//.toFixed(2); 
                 //console.log("***********Entrou no SomaPagamentos e o valor é: *************" + ValordoPag);

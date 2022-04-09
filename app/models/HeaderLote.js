@@ -1,5 +1,4 @@
-const db = require("../models");
-const DadosFolha = db.dadosfolhas;
+const TabelaFolha = require("../models/TabelaFolha");
 const { CompletaCampos } = require("../controllers/processamentos");
 
 exports.AjustaHeaderLote = (cnpj) => new Promise 
@@ -13,7 +12,7 @@ var digito2 = "00";
 //folha.codigodobanco
 var camposHeaderLote = [];
     //console.log("********************************Entrou no Headerlote com cnpj: " + cnpj + "- Glória a Deus!")  
-    DadosFolha.findOne({where: {cnpj: cnpj}})
+    TabelaFolha.findOne({where: {cnpj: cnpj}})
     .then(folha => {              
     camposHeaderLote = [folha.codigodobanco,"0001","1","C","30","01","046",
     espaco1,"1",CompletaCampos("inicio",folha.cnpj,14,"0"),CompletaCampos("inicio",folha.codigoconvenio,20,"0"),

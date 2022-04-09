@@ -1,5 +1,4 @@
-const db = require("../models/index");
-const DadosFolha = db.dadosfolhas;
+const TabelaFolha = require("../models/TabelaFolha");
 const { GeraData, GeraHora, CompletaCampos } = require("../controllers/processamentos");
 
 exports.AjustaHeaderArquivo = (cnpj) => new Promise 
@@ -11,13 +10,14 @@ var espaco20 = "                    ";
 var espaco29 = "                             ";
 var digito1 = "0";    
 var digito3 = "000";   
-
+console.log("🔥🔥🔥************ Entrou no AjustaHeaderArquivo:******************* 🔥🔥🔥")
 var textoHeaderArquivo = [];
 //mudar o cód cnpj para "2" e criar um textoHeaderArquivo e Lote para o BB
 //pois o nº do convênio se desdobra em 4 partes de BB1 a BB4 
 //(ver outras peculiaridades do BB)
-    DadosFolha.findOne({ where: { cnpj: cnpj } })
+    TabelaFolha.findOne({ where: { cnpj: cnpj } })
         .then(folha => {
+            console.log("🔥🔥🔥************ Entrou no AjustaHeaderArquivo - TabelaFolha.findOne:******************* 🔥🔥🔥")
             //com base no cnpj pesquisa os dados //folha.codigodobanco
             textoHeaderArquivo = [folha.codigodobanco,digito1+digito3,digito1,espaco9,
             "1",CompletaCampos("inicio",folha.cnpj,14,"0"),CompletaCampos("inicio",folha.codigoconvenio,20,"0"),

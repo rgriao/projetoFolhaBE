@@ -6,7 +6,8 @@ var cors = require ("cors");
 const bodyParser = require("body-parser");
 var fileupload = require("express-fileupload");
 require('dotenv').config();
-
+//const { conexao } = require("./app/config/connection");
+//conexao();
 //cria o aplicativo express
 var app = express();
 app.use(fileupload());

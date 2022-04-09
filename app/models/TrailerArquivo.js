@@ -1,5 +1,4 @@
-const db = require("../models/index");
-const DadosFolha = db.dadosfolhas;
+const TabelaFolha = require("../models/TabelaFolha");
 const { CompletaCampos } = require("../controllers/processamentos");
 const { BuscaQdeRegistros, SomaPagamentos } = require("../controllers/processamentos")
 
@@ -19,7 +18,7 @@ var QdeRegistros = ((BuscaQdeRegistros(corpo)*2)+4).toString();
 //console.log("*****TrailerArquivo*******QdeRegistros******* " + QdeRegistros);
 //.then (() => {
 
-DadosFolha.findOne({where: {cnpj: corpo[0].cnpj}})
+TabelaFolha.findOne({where: {cnpj: corpo[0].cnpj}})
 .then(folha => {    
 //com base no cnpj pesquisa os dados
 textoTrailerArquivo = [folha.codigodobanco,"9999","9",espaco9,"000001",CompletaCampos("inicio",QdeRegistros,6,"0"),

@@ -1,13 +1,13 @@
 var app = require('./app');
-var debug = require('debug')('analisando: cnab240');
 var http = require('http');
 const cors = require("cors");
+const { porta } = require('./app/config/configDB');
 require('dotenv').config();
-//console.log("🔥🔥🔥", process.env);
+
 app.use(cors());
 app.options('*', cors());
 var corsOptions = {
-  origin: (process.env.PORT || '8081')
+  origin: (porta || '8081')
 }; 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -52,7 +52,7 @@ var server = http.createServer(app);
 server.on('erro', onError);
 server.on('audição', onListening);
 
-const PORT = normalizePort(process.env.PORT || '8080');
+const PORT = normalizePort(porta || '8080');
 app.set('port', PORT);
 server.listen(PORT, () => {
 console.log(`O Servidor está pronto para se comunicar na porta: ${PORT}.`);

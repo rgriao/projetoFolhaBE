@@ -1,5 +1,4 @@
-const db = require("./index");
-const DadosFolha = db.dadosfolhas;
+const TabelaFolha = require("../models/TabelaFolha");
 const { CompletaCampos } = require("../controllers/processamentos");
 
 exports.AjustaSegmentos = (corpo) => new Promise 
@@ -24,7 +23,7 @@ exports.AjustaSegmentos = (corpo) => new Promise
     //console.log("\n\n" + "***********Entrou no segmentoA:*************" + qdeRegistro+"\n\n");
     
     for (let i = 0, p = Promise.resolve(); i < qdeRegistro; i++) {            
-            p = p.then(() => DadosFolha.findOne({where: {nomedofuncionario: corpo[i].nomedofuncionario}})) 
+            p = p.then(() => TabelaFolha.findOne({where: {nomedofuncionario: corpo[i].nomedofuncionario}})) 
             .then((folha) => {   
             textoSegmentos = [folha.codigodobanco,"0001","3",CompletaCampos("inicio",(1+y).toString(),5,"0"),"A",digito1,digito1+digito1,
             digito1+digito1+digito1,folha.codigodobanco,CompletaCampos("inicio",folha.agenciafuncionario,5,"0"),
