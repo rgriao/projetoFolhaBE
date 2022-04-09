@@ -7,7 +7,7 @@ module.exports = {
     password: process.env.PG_PASSWORD,
     database: process.env.PG_DATABASE,    
     port: process.env.PG_PORT,
-    dialect: process.env.PG_DIALECT,      
+    dialect: 'postgres',      
     pool: {
       max: parseInt(process.env.PG_POOL_MAX),
       min: parseInt(process.env.PG_POOL_MIN),
@@ -21,11 +21,11 @@ module.exports = {
     password: process.env.PG_PASSWORD,
     database: process.env.PG_DATABASE,    
     port: process.env.PG_PORT,
-    dialect: process.env.PG_DIALECT,   
+    dialect: 'postgres',   
   },
   production: {
     database: process.env.DATABASE_URL,
-    dialect: process.env.PG_DIALECT,
+    dialect: 'postgres',
     dialectOptions: {
       ssl: true,
     },
