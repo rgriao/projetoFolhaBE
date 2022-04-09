@@ -21,8 +21,8 @@ app.use(cors());
 //a função existente no arquivo controlador correspondente para
 //manipular o banco de dados com GET e POST.
 // Definir configuração gerais do aplicativo
-app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'jade');
+//app.set('views', path.join(__dirname, 'views'));
+//app.set('view engine', 'jade');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
