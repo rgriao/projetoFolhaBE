@@ -16,14 +16,14 @@ const [tabelaContador, created] = await TabelaContador.findOrCreate({
  defaults: {
   contador: 1
 }
-if (!created){
-  console.log("🔥🔥🔥 *************TabelaContador.contador:  " + tabelaContador.contador + "  ***************🔥🔥🔥")
+if (!created){  
   x = tabelaContador.contador + 1;  
   tabelaContador.update(
     { contador: x 
   })  
   tabelaContador.save();
 }
+//console.log("🔥🔥🔥 *************TabelaContador.contador:  " + req.body[0].nomedaempresa + "  ***************🔥🔥🔥")
   DeletaRegistros(req.body[0].cnpj).then(() => { 
    TabelaFolha.bulkCreate(req.body)         
     .then(() => {   
