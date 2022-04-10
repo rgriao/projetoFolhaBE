@@ -6,7 +6,7 @@ require('dotenv').config();
 app.use(cors());
 app.options('*', cors());
 var corsOptions = {
-  origin: (process.env.PG_PORT || '8081')
+  origin: (process.env.PORT || '8081')
 }; 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -18,7 +18,7 @@ function normalizePort(val) {
   }
   return false;
 }
-const port = normalizePort(process.env.PG_PORT || '8080');
+const port = normalizePort(process.env.PORT || '8080');
 app.set('port', port);
 
 function onError(error) {
