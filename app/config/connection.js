@@ -1,6 +1,8 @@
 const Sequelize = require("sequelize");
 const dbConfig = require('./configDB');
+
 var conn = "";
+
 exports.conexao = () => {
  if (process.env.NODE_ENV.trim() === 'development' || process.env.NODE_ENV.trim() === 'test') {    
   conn = new Sequelize(dbConfig.development.database, dbConfig.development.user, 
