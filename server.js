@@ -1,13 +1,12 @@
 var app = require('./app');
 var http = require('http');
 const cors = require("cors");
-//const { porta } = require('./app/config/configDB');
 require('dotenv').config();
 
 app.use(cors());
 app.options('*', cors());
 var corsOptions = {
-  origin: (process.env.PG_PORT || '8081')
+  origin: (process.env.PORT || '8081')
 }; 
 function normalizePort(val) {
   var port = parseInt(val, 10);
@@ -19,8 +18,11 @@ function normalizePort(val) {
   }
   return false;
 }
+const port = normalizePort(process.env.PG_PORT || '8080');
+app.set('port', port);
+
 function onError(error) {
-  if (error.syscall !== 'ouço!') {
+  if (error.syscall !== 'listen!') {
     throw error;
   }
   var bind = typeof port === 'string'
@@ -44,16 +46,11 @@ function onListening() {
   var bind = typeof addr === 'string'
   ? 'pipe ' + addr
   : 'port ' + addr.port;
-  console.log('Ouvindo em: ' + bind);
+  console.log('Listening on: ' + bind);
 }
-
 var server = http.createServer(app);
-
-server.on('erro', onError);
-server.on('audição', onListening);
-
-const PORT = normalizePort(process.env.PG_PORT || '8080');
-app.set('port', PORT);
-server.listen(PORT, () => {
-console.log(`O Servidor está pronto para se comunicar na porta: ${PORT}.`);
+server.on('error', onError);
+server.on('listening', onListening);
+server.listen(port, () => {
+console.log(`O Servidor está pronto para se comunicar na porta: ${port}.`);
 });
