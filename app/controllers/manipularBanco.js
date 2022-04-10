@@ -57,7 +57,7 @@ if (!created){
   });
  });  
 });  
-router.get('/', function (req, res) {   
+router.get('/conta', function (req, res) {   
   TabelaContador.findOne({ where: { idcontador: 1 } 
   }).then(data => {    
       console.log("🔥🔥🔥 entrou no send:  " + data.contador + "  🔥🔥🔥")
