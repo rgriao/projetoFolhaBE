@@ -20,7 +20,7 @@ var textoHeaderArquivo = [];
             console.log("🔥🔥🔥************ Entrou no AjustaHeaderArquivo - TabelaFolha.findOne:******************* 🔥🔥🔥")
             //com base no cnpj pesquisa os dados //folha.codigodobanco
             textoHeaderArquivo = [folha.codigodobanco,digito1+digito3,digito1,espaco9,
-            "1",CompletaCampos("inicio",folha.cnpj,14,"0"),CompletaCampos("inicio",folha.codigoconvenio,20,"0"),
+            "2",CompletaCampos("inicio",folha.cnpj,14,"0"),CompletaCampos("inicio",folha.codigoconvenio,20,"0"),
             CompletaCampos("inicio",folha.agenciaempresa,5,"0"),folha.digitodaagenciaempresa,
             CompletaCampos("inicio",folha.ndacontaempresa,12,"0"),folha.digitodacontaempresa,
             CompletaCampos("fim",folha.digitoverificadoragcontaempresa,1," "),CompletaCampos("fim",folha.nomedaempresa,30," "),
