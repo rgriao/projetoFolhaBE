@@ -60,11 +60,11 @@ if (!created){
 router.get('/conta', function (req, res) {   
   TabelaContador.findOne({ where: { idcontador: 1 } 
   }).then(data => {    
-      console.log("🔥🔥🔥 entrou no send:  " + data.contador + "  🔥🔥🔥")
+      console.log("🔥🔥🔥 entrou no send BE:  " + data.contador + "  🔥🔥🔥")
       res.send(data);  
      })
     .catch(err => {       
-      console.log("Ocorreu algum erro ao buscar a quantidade de visitantes!" + err)      
+      console.log("Ocorreu algum erro ao buscar a quantidade de visitantes no BE!" + err)      
       });
     }); 
   module.exports = router;
